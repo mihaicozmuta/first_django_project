@@ -1,0 +1,26 @@
+<h1>This is Mihai's ToDo List :)</h1>
+
+<ul>
+    {% for todo_item in all_items %}
+        <li>{{ todo_item.content }}</li>
+        <form action="/delTodo/{{todo_item.id}}" 
+            style="display: inline;"
+            method="post">{% csrf_token %}
+         <input type="submit" value="Delete item"/>
+        </form>
+    {% endfor %}
+</ul>
+
+
+<form action="/addTodo/" method = "post">{% csrf_token %}
+    <input type="text" name="content"/>
+    <input type="submit" value="Add item"/>
+</form>
+
+
+
+ <!-- <ul>
+     {% for i in 'alandala' %}
+        <li>{{ i }}</li>
+    {% endfor %}
+ </ul> -->
