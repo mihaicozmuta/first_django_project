@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hello.views import my_view
+from hello.views import my_view, go_todo
 from todo.views import todo_view, add_todo, del_todo
 
 urlpatterns = [
@@ -23,5 +23,6 @@ urlpatterns = [
     path('hello/', my_view),
     path('todo/', todo_view),
     path('addTodo/', add_todo),
-    path('delTodo/<int:todo_id>', del_todo)
+    path('delTodo/<int:todo_id>', del_todo),
+    path('goTodo/', go_todo)
 ]
